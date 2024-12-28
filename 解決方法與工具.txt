@@ -1,0 +1,26 @@
+系統WIN10
+python 3.11.9
+
+語音輸入轉文字(暫存) (Whisper)
+語意識別
+    -> 播放 -> 啟用喇叭
+    -> STT -> 啟用TXT紀錄文字 使用介面多一個內容記錄內容記錄彈窗
+    -> 人數識別 -> 啟用相機 (YOLO V5 LITE)
+
+pip install git+https://github.com/openai/whisper.git
+Whisper 依賴 ffmpeg(v7.1)
+whisper 未使用gpu版
+
+pip install transformers sentence-transformers
+語意識別模型 : paraphrase-multilingual-MiniLM-L12-v2
+
+
+AI Agent 
+決策流程 : 感知->規劃->行動
+核心模塊 : 規劃、記憶、工具、行動
+
+本實作包含了 規劃、工具與行動，規劃、工具=inference.py，行動=action.py
+
+
+
+
