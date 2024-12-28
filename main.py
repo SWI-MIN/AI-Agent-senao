@@ -1,6 +1,4 @@
-import whisper
-from sentence_transformers import SentenceTransformer, util
-
+# 承擔Agent職責
 import init, inference, action
 
 
