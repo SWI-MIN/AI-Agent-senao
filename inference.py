@@ -1,5 +1,6 @@
 # 推理
 from sentence_transformers import util
+import cv2
 
 # 處理音頻並轉換為文字
 def transcribe_audio(file_path, audio_model):
@@ -21,3 +22,22 @@ def analyze_text(text, semantic_model, action_embeddings):
     confidence = similarities[best_match]
     
     return best_match, confidence
+
+def people_detection(YOLO_model, frame):
+    # 使用 YOLO 模型進行人數檢測
+    results = YOLO_model(frame)
+    people_count = 0
+
+    # 分析檢測結果
+    for result in results:
+        for box in result.boxes.data:
+            class_id = int(box[5])  # 類別 ID
+            if class_id == 0:  # 'person' 在 COCO 資料集中的 ID 是 0
+                people_count += 1
+
+    print(f"檢測到的人數: {people_count}")
+
+    annotated_frame = results[0].plot()  # 檢測結果
+    # 保存檢測結果
+    cv2.imwrite('annotated_frame.jpg', annotated_frame)
+    print("檢測結果保存為 annotated_frame.jpg")

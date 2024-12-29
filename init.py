@@ -1,6 +1,6 @@
 import whisper
-from sentence_transformers import SentenceTransformer, util
-
+from sentence_transformers import SentenceTransformer
+from ultralytics import YOLO
 
 def init():
     ''' 加載 Whisper 模型
@@ -11,6 +11,9 @@ def init():
 
     # 初始化語意模型
     semantic_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+
+    # 初始化 YOLO 模型
+    YOLO_model = YOLO('.\Model\yolo11n.pt')
 
     # 定義語意關鍵字和動作（支持多關鍵字）
     actions = {
@@ -24,4 +27,4 @@ def init():
     for action, keywords in actions.items():
         action_embeddings[action] = [semantic_model.encode(keyword, convert_to_tensor=True) for keyword in keywords]
 
-    return audio_model, semantic_model, action_embeddings
+    return audio_model, semantic_model, YOLO_model, action_embeddings
