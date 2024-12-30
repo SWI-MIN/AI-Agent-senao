@@ -26,7 +26,6 @@ MiniLM : Mini Language Model，由 Microsoft 開發的壓縮型Transformer模型
 L12 : 代表12層 Transformer 編碼器（Layers）
 
 #### YOLO V11
-:::success
 - pip install ultralytics 裡面包含YOLO模型
 - 下載權重後引入使用
 - 目前選擇YOLOV 11S，其屬於小模型，雖較V11N稍慢50ms，但準確度更高
