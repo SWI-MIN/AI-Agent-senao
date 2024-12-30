@@ -1,43 +1,35 @@
 # AI-Agent-senao
 
 ### 硬體與環境
-:::info
+
 - CPU : I7-9750H
 - 周邊硬體IO : 筆電自帶
 - 系統 : WIN10
-:::
-:::info
 - python版本 : python 3.11.9
 - 使用virtualenv創建虛擬空間"AI-Agent"，以指令".\AI-Agent\Scripts\activate"啟動
-:::
 
 ---
 
 ### AI工具
 #### openAI Whisper
-:::success
 - 用於語音輸入轉文字本地運行
 - pip install git+https://github.com/openai/whisper.git
 - Whisper 依賴 ffmpeg(v7.1)
 - whisper 未使用gpu版(樹梅派無CUDA)
-:::
-----
+
 #### paraphrase-multilingual-MiniLM-L12-v2
-:::success
 - 用於語意識別，此版本支援多語言語意識別，包含中文
 - pip install transformers sentence-transformers
 paraphrase : 語義相似性
 multilingual：該模型支援多語言
 MiniLM : Mini Language Model，由 Microsoft 開發的壓縮型Transformer模型，具有較少的參數量。
 L12 : 代表12層 Transformer 編碼器（Layers）
-:::
-----
+
 #### YOLO V11
 :::success
 - pip install ultralytics 裡面包含YOLO模型
 - 下載權重後引入使用
 - 目前選擇YOLOV 11S，其屬於小模型，雖較V11N稍慢50ms，但準確度更高
-:::
 
 ---
 
