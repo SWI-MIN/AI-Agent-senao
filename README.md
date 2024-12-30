@@ -20,10 +20,10 @@
 #### paraphrase-multilingual-MiniLM-L12-v2
 - 用於語意識別，此版本支援多語言語意識別，包含中文
 - pip install transformers sentence-transformers
-paraphrase : 語義相似性
-multilingual：該模型支援多語言
-MiniLM : Mini Language Model，由 Microsoft 開發的壓縮型Transformer模型，具有較少的參數量。
-L12 : 代表12層 Transformer 編碼器（Layers）
+    - paraphrase : 語義相似性
+    - multilingual：該模型支援多語言
+    - MiniLM : Mini Language Model，由 Microsoft 開發的壓縮型Transformer模型，具有較少的參數量。
+    - L12 : 代表12層 Transformer 編碼器（Layers）
 
 #### YOLO V11
 - pip install ultralytics 裡面包含YOLO模型
